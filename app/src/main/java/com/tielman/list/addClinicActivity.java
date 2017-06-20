@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.UUID;
+
 import io.realm.Realm;
 
 public class addClinicActivity extends AppCompatActivity {
@@ -25,6 +27,7 @@ public class addClinicActivity extends AppCompatActivity {
         }
         Clinic clinic_new = new Clinic();
         clinic_new.setName(name);
+        clinic_new.setId(UUID.randomUUID().toString());
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
         realm.copyToRealm(clinic_new);

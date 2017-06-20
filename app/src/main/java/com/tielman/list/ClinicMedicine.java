@@ -9,11 +9,15 @@ import io.realm.annotations.PrimaryKey;
 
 public class ClinicMedicine extends RealmObject {
     @PrimaryKey
-    private long id;
-    private String name;
+    private String id;
     private Clinic clinic;
     private Medicine medicine;
     private double quantity;
+
+    @Override
+    public String toString() {
+        return quantity + " " + medicine;
+    }
 
     public double getQuantity() {
         return quantity;
@@ -23,20 +27,12 @@ public class ClinicMedicine extends RealmObject {
         this.quantity = quantity;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Clinic getClinic() {

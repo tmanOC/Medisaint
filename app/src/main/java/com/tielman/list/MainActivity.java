@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 int itemPosition     = position;
                 // ListView Clicked item value
                 Clinic clinic = (Clinic)listView.getItemAtPosition(position);
-                long identifier = clinic.getId();
+                String identifier = clinic.getId();
                 // String  itemValue    = listView.getItemAtPosition(position).toString();
                 // Show Alert
                 Intent intent = new Intent(mainActivity, ClinicDetailActivity.class);

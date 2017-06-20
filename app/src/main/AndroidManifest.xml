@@ -26,11 +26,43 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".ClinicDetailActivity" android:launchMode="singleTop">
+        <activity
+            android:name=".ClinicDetailActivity"
+            android:launchMode="singleTop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".AddClinicMedicineActivity" android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ClinicDetailActivity" />
+        </activity>
+        <activity android:name=".ClinicMedicineDetailActivity" android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ClinicDetailActivity" />
+        </activity>
+
+        <activity android:name=".SelectMedicineActivity" android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ClinicMedicineDetailActivity" />
+        </activity>
+
+        <activity android:name=".MedicineDetailActivity" android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SelectMedicineActivity" />
+        </activity>
+
+        <activity android:name=".AddMedicineActivity" android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SelectMedicineActivity" />
+        </activity>
+
+
     </application>
 
 </manifest>

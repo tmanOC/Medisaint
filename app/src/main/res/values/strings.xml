@@ -4,4 +4,7 @@
     <string name="add_clinic_title">Add Clinic</string>
     <string name="create_clinic">Create</string>
     <string name="clinic_name">Name</string>
+    <string name="select_medicine">Select medicine</string>
+    <string name="select">Select</string>
+    <string name="quantity">Quantity</string>
 </resources>
