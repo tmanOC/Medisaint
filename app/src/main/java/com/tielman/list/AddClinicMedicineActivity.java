@@ -3,15 +3,17 @@ package com.tielman.list;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
 import java.util.UUID;
 
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 public class AddClinicMedicineActivity extends AppCompatActivity {
-    public final String CLINIC_MEDICINE_KEY = "CLINIC_MEDICINE_KEY";
+    public static final String CLINIC_MEDICINE_KEY = "CLINIC_MEDICINE_KEY";
     ClinicMedicine clinicMedicine;
     Clinic result;
 
@@ -44,6 +46,26 @@ public class AddClinicMedicineActivity extends AppCompatActivity {
            return;
         }
         text_medicine.setText(medicine.getName());
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return  true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Realm realm = Realm.getDefaultInstance();
+        realm.beginTransaction();
+
+        //clinicMedicine.deleteFromRealm();
+        realm.commitTransaction();
+        super.onBackPressed();
     }
 
     public void openMedicineSelect(View view) {

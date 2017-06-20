@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.UUID;
 
 import io.realm.Realm;
@@ -73,6 +74,19 @@ public class ClinicDetailActivity extends AppCompatActivity {
         };
 
         listView.setOnItemClickListener( listener);
+    }
+
+    @Override
+    protected void onResume() {
+        Realm realm = Realm.getDefaultInstance();
+        final RealmResults<ClinicMedicine> clinic_medicine_results = realm.where(ClinicMedicine.class).equalTo("clinic.id",identifier).findAll();
+        Object[] objectArray = clinic_medicine_results.toArray();
+        values = new ArrayList<ClinicMedicine>(Arrays.asList(Arrays.copyOf(objectArray, objectArray.length,
+                ClinicMedicine[].class)));
+        adapter.clear();
+        adapter.addAll(values);
+        adapter.notifyDataSetChanged();
+        super.onResume();
     }
 
     public void openAddActivity(View view) {

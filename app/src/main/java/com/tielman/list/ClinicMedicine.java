@@ -1,13 +1,15 @@
 package com.tielman.list;
 
+import io.realm.RealmModel;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.RealmClass;
 
 /**
  * Created by tielman on 2017/06/18.
  */
-
-public class ClinicMedicine extends RealmObject {
+@RealmClass
+public class ClinicMedicine implements RealmModel {
     @PrimaryKey
     private String id;
     private Clinic clinic;

@@ -1,15 +1,17 @@
 package com.tielman.list;
 
+import io.realm.RealmModel;
 import io.realm.RealmObject;
 import io.realm.RealmResults;
 import io.realm.annotations.LinkingObjects;
 import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.RealmClass;
 
 /**
  * Created by tielman on 2017/06/18.
  */
-
-public class Medicine extends RealmObject {
+@RealmClass
+public class Medicine implements RealmModel {
     public String getId() {
         return id;
     }
