@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">List</string>
+    <string name="main_activity_title">Clinics</string>
+    <string name="add_clinic_title">Add Clinic</string>
+    <string name="create_clinic">Create</string>
+    <string name="clinic_name">Name</string>
+</resources>
